@@ -1,0 +1,21 @@
+Loading and Cleaning Data:
+  The dataset is loaded, and columns like 'society', 'area_type', 
+  'balcony', and 'availability' are removed.
+  The dataset is cleaned by removing rows with missing values.
+Feature Engineering:
+  New features are created, such as bhk (number of bedrooms) by 
+  parsing the 'size' column.
+  The 'total_sqft' column, which sometimes contains ranges or
+  different units, is converted into a numerical form.
+Outlier Detection and Removal:
+  A column price_per_sqft is created by dividing the price by 
+  the total square footage. Properties with extreme or inconsistent values, such as too 
+  small properties for the number of bedrooms, are removed.
+  Outliers are also removed by location based on standard deviations from the mean price_per_sqft for that location.
+  Specific outliers based on the number of bathrooms in comparison to bedrooms are also filtered out.
+Visualization:
+  Scatter plots are generated for different locations like "Rajaji Nagar" and "Hebbal", 
+  showing the relationship between the total square feet and price for 2 BHK and 3 BHK properties.
+  Histograms of price per square feet and the number of bathrooms are plotted.
+Dummy Variables for Locations:
+  Location data is transformed into dummy variables (one-hot encoding) to prepare for machine learning models.
